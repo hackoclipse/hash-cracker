@@ -7,4 +7,4 @@ bitcoin: 3Pt5tRKEitduYnKEHTBYx2NEVAVVVi7o6N
 
 DONATORS:
 
-max speeds with i7 4702MQ = 2500 MHs
+max speeds with i7 4702MQ = 2,5 MHs
