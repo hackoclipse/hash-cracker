@@ -6,3 +6,5 @@ other fetures like gpu cracking comes later because I first want to make it fast
 bitcoin: 3Pt5tRKEitduYnKEHTBYx2NEVAVVVi7o6N
 
 DONATORS:
+
+max speeds with i7 4702MQ = 2500 MHs
