@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.security.MessageDigest;
-import java.util.ArrayList;
+import java.security.NoSuchAlgorithmException;
 
 /**
  *
@@ -23,13 +23,12 @@ public class Md5 {
      * @param args the command line arguments
      */
     private static double klok = System.nanoTime();
-    // timer to see how much hashes it makes in 1 sec.
-    private static double begintime;
-    private static double endtime;
     // location of wordlist.
     private static String location = "";
     // hash it has to find.
     private static String hash = "";
+    private static String sCurrentLine;
+    private static double testtijd;
 
 //    private static String passworda = "123456";
     public static void main(String[] args) throws Exception {
@@ -48,19 +47,18 @@ public class Md5 {
             System.err.println("faild to start change arguments to md5 hash, location of wordlist!");
             System.exit(0);
         }
-        
+
         // here we chose witch file is used 
         InputStream is;
         is = new FileInputStream(location);
         try (BufferedReader bfReader = new BufferedReader(new InputStreamReader(is))) {
-            String sCurrentLine;
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            testtijd = System.nanoTime();
             while ((sCurrentLine = bfReader.readLine()) != null) {
-                // this line is needed because the wordlist could have a empty row and it will generate a empty hash wich kost extra time.
-                if (!sCurrentLine.equals("")) { 
+                // this line is needed because the wordlist could have a empty row and it will generate a empty hash wich kost extra time.;
+                if (!sCurrentLine.equals("")) {
                     // here we generate the hash and place a timer to see how fast in nanoseconds it take to create the hash.
                     // and we calculate how much hashes are made in 1 sec.
-                    begintime = System.nanoTime();
-                    MessageDigest md = MessageDigest.getInstance("MD5");
                     md.update(sCurrentLine.getBytes());
                     byte[] digest = md.digest();
                     StringBuffer sb = new StringBuffer();
@@ -71,14 +69,9 @@ public class Md5 {
                     // here we check if the hash is the same as the hash we have generated.
                     // if the hash is the same it will show the hash with the right combination and quits, else it says it isn't right and will keep going until the wordlist is empty.
                     if (hash.equals(sb.toString())) {
-                        System.out.println(((double) System.nanoTime() - klok) / 1000000000);
                         System.out.println("hash = " + sb + " = " + sCurrentLine);
                         System.exit(0);
-                    } else {
-                        System.out.println("not the right password = " + sCurrentLine + " with hash = " + sb);
                     }
-                    endtime = System.nanoTime();
-                    System.out.println("hashes p/s = " + 1 / ((endtime - begintime) / 1000000000));
                 }
             }
             System.out.println("faild to find password"); //  if all the combinations aren't right it will print "faild to find password".
