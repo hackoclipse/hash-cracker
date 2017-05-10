@@ -67,7 +67,6 @@ public class Md5 {
         is = new FileInputStream(location);
         try (BufferedReader bfReader = new BufferedReader(new InputStreamReader(is))) {
             MessageDigest md = MessageDigest.getInstance("MD5");
-            testtijd = System.currentTimeMillis();
             while ((sCurrentLine = bfReader.readLine()) != null) {
                 // this line is needed because the wordlist could have a empty row and it will generate a empty hash wich kost extra time.;
                 if (!sCurrentLine.equals("")) {
