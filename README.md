@@ -9,7 +9,7 @@ So you make the program work:
 - compile the jar file.
 - download a wordlist.
 - open terminal/command prompt.
-- tipe: java -jar md5.jar ( your md5 hash), ( your wordlist )
+- tipe: java -jar md5.jar ( your md5 hash) ( your wordlist )
 
 Example: java -jar md5.jar f96bd3e1b9e0a1a2c0c2e6c2deb4aa77 'C:\Users\mh123hack\Downloads\wordlist.txt'
 
