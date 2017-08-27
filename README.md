@@ -3,6 +3,8 @@ this is a hash cracker written in java.
 it supports on the momend only md5 hashes with cpu cracking.
 other fetures like gpu cracking comes later because I first want to make it faster.
 
+thread are added so you can change those in the md5.java file
+
 max speeds with i7 4702MQ = 2500000 Hs / 2500 Khs/ 2,5 Mhs
 
 So you make the program work:
