@@ -15,9 +15,9 @@ So you make the program work:
 
 Example: java -jar md5.jar f96bd3e1b9e0a1a2c0c2e6c2deb4aa77 'C:\Users\mh123hack\Downloads\wordlist.txt'
 
-binaries and releases: https://github.com/mh123hack/hash-cracker/releases
+binaries and releases: https://github.com/hackoclipse/hash-cracker/releases
 
-bitcoin: 3Pt5tRKEitduYnKEHTBYx2NEVAVVVi7o6N
+bitcoin: 1E251Rpb7zd8adcfmSgE1GDRyt6M36H2mP
 
 DONATORS:
 
